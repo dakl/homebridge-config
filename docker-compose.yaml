@@ -12,10 +12,10 @@ services:
   homebridge:
     image: oznu/homebridge:raspberry-pi
     volumes:
-      - ./homebridge:/homebridge
+      - ./homebridge/config.json:/homebridge/config.json:ro
+      - ./homebridge/package.json:/homebridge/package.json:ro
     depends_on: 
       - particle-homebridge-translation-api
-    
 secrets:
   tv_backlight_device_id:
     external: true
