@@ -1,0 +1,75 @@
+{
+    "bridge": {
+        "name": "Daniel's Home Hacks",
+        "username": "danielk",
+        "port": 51827,
+        "pin": "123-45-678"
+    },
+    "description": "My Homebridge Config",
+    "accessories": [
+        {
+            "accessory": "HTTP-SWITCH",
+            "name": "Relay 1",
+            "on": {
+                "url": "particle-homebridge-translation-api:8000/relay/1/on",
+                "method": "POST"
+            }, 
+            "off": {
+                "url": "particle-homebridge-translation-api:8000/relay/1/off",
+                "method": "POST"
+            },
+            "status": {
+                "url": "particle-homebridge-translation-api:8000/relay/1",
+                "method": "GET"
+            }
+        },
+        {
+            "accessory": "HTTP-SWITCH",
+            "name": "Relay 2",
+            "on": {
+                "url": "particle-homebridge-translation-api:8000/relay/2/on",
+                "method": "POST"
+            }, 
+            "off": {
+                "url": "particle-homebridge-translation-api:8000/relay/2/off",
+                "method": "POST"
+            },
+            "status": {
+                "url": "particle-homebridge-translation-api:8000/relay/2",
+                "method": "GET"
+            }
+        },
+        {
+            "accessory": "HTTP-SWITCH",
+            "name": "Relay 3",
+            "on": {
+                "url": "particle-homebridge-translation-api:8000/relay/3/on",
+                "method": "POST"
+            }, 
+            "off": {
+                "url": "particle-homebridge-translation-api:8000/relay/3/off",
+                "method": "POST"
+            },
+            "status": {
+                "url": "particle-homebridge-translation-api:8000/relay/3",
+                "method": "GET"
+            }
+        },
+        {
+            "accessory": "HTTP-SWITCH",
+            "name": "Relay 4",
+            "on": {
+                "url": "particle-homebridge-translation-api:8000/relay/4/on",
+                "method": "POST"
+            }, 
+            "off": {
+                "url": "particle-homebridge-translation-api:8000/relay/4/off",
+                "method": "POST"
+            },
+            "status": {
+                "url": "particle-homebridge-translation-api:8000/relay/4",
+                "method": "GET"
+            }
+        }
+    ]
+}
