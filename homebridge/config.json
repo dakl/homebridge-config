@@ -1,74 +1,81 @@
 {
     "bridge": {
         "name": "Daniel's Home Hacks",
-        "username": "danielk",
+        "username": "00:00:00:00:00:FF",
         "port": 51827,
         "pin": "123-45-678"
     },
-    "description": "My Homebridge Config",
+    "description": "My Homebridge Configuration",
     "accessories": [
         {
-            "accessory": "HTTP-SWITCH",
-            "name": "Relay 1",
-            "on": {
-                "url": "particle-homebridge-translation-api:8000/relay/1/on",
-                "method": "POST"
-            }, 
-            "off": {
-                "url": "particle-homebridge-translation-api:8000/relay/1/off",
-                "method": "POST"
-            },
-            "status": {
-                "url": "particle-homebridge-translation-api:8000/relay/1",
-                "method": "GET"
+            "accessory": "HTTP-RGB",
+            "name": "Switch 1",
+            "switch": {
+                "url": "http://particle-relay-hub-api:8000/api/v1/accessories/1/status"
             }
         },
         {
-            "accessory": "HTTP-SWITCH",
-            "name": "Relay 2",
-            "on": {
-                "url": "particle-homebridge-translation-api:8000/relay/2/on",
-                "method": "POST"
-            }, 
-            "off": {
-                "url": "particle-homebridge-translation-api:8000/relay/2/off",
-                "method": "POST"
-            },
-            "status": {
-                "url": "particle-homebridge-translation-api:8000/relay/2",
-                "method": "GET"
+            "accessory": "HTTP-RGB",
+            "name": "Switch 2",
+            "switch": {
+                "url": "http://particle-relay-hub-api:8000/api/v1/accessories/2/status"
             }
         },
         {
-            "accessory": "HTTP-SWITCH",
-            "name": "Relay 3",
-            "on": {
-                "url": "particle-homebridge-translation-api:8000/relay/3/on",
-                "method": "POST"
-            }, 
-            "off": {
-                "url": "particle-homebridge-translation-api:8000/relay/3/off",
-                "method": "POST"
-            },
-            "status": {
-                "url": "particle-homebridge-translation-api:8000/relay/3",
-                "method": "GET"
+            "accessory": "HTTP-RGB",
+            "name": "Switch 3",
+            "switch": {
+                "url": "http://particle-relay-hub-api:8000/api/v1/accessories/3/status"
             }
         },
         {
-            "accessory": "HTTP-SWITCH",
-            "name": "Relay 4",
-            "on": {
-                "url": "particle-homebridge-translation-api:8000/relay/4/on",
-                "method": "POST"
-            }, 
-            "off": {
-                "url": "particle-homebridge-translation-api:8000/relay/4/off",
-                "method": "POST"
+            "accessory": "HTTP-RGB",
+            "name": "Switch 4",
+            "switch": {
+                "url": "http://particle-relay-hub-api:8000/api/v1/accessories/4/status"
+            }
+        },
+        {
+            "accessory": "HTTP-RGB",
+            "name": "Switch 5",
+            "switch": {
+                "url": "http://particle-relay-hub-api:8000/api/v1/accessories/5/status"
+            }
+        },
+        {
+            "accessory": "HTTP-RGB",
+            "name": "Switch 6",
+            "switch": {
+                "url": "http://particle-relay-hub-api:8000/api/v1/accessories/6/status"
+            }
+        },
+        {
+            "accessory": "HTTP-RGB",
+            "name": "Switch 7",
+            "switch": {
+                "url": "http://particle-relay-hub-api:8000/api/v1/accessories/7/status"
+            }
+        },
+        {
+            "accessory": "HTTP-RGB",
+            "name": "Switch 8",
+            "switch": {
+                "url": "http://particle-relay-hub-api:8000/api/v1/accessories/8/status"
+            }
+        },
+        {
+            "accessory": "HTTP-RGB",
+            "name": "Bakom Teven",
+            "duration": 750,
+            "switch": {
+                "url": "http://tv-backlight-api:8000/api/v1/accessories/1/status"
             },
-            "status": {
-                "url": "particle-homebridge-translation-api:8000/relay/4",
-                "method": "GET"
+            "brightness": {
+                "url": "http://tv-backlight-api:8000/api/v1/accessories/1/brightness"
+            },
+            "color": {
+                "url": "http://tv-backlight-api:8000/api/v1/accessories/1/color",
+                "brightness": true
             }
         }
     ]

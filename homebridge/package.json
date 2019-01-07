@@ -1,13 +1,14 @@
 {
   "name": "homebridge-config",
   "version": "1.0.0",
-  "description": "homebridge node conf",
+  "repository": "https://github.com/dakl/homebridge-config",
+  "description": "my homebridge configuration",
   "license": "MIT",
   "keywords": [
     "homebridge"
   ],
   "dependencies": {
-    "homebridge": ">=0.4.32",
-    "homebridge-http-switch": "git+https://github.com/dakl/homebridge-http-switch.git"
+    "homebridge-http-switch": "git+https://github.com/dakl/homebridge-http-switch.git",
+    "homebridge-http-rgb": "git+https://github.com/dakl/homebridge-http-rgb"
   }
 }
