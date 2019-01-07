@@ -1,21 +1,26 @@
 version: '3.1'
 
 services:
-  particle-homebridge-translation-api:
-    image: dakl/particle-homebridge-translation-api:latest
+  particle-relay-hub-api:
+    image: dakl/particle-relay-hub-api:latest
     ports:
-      - "8000:8000"
+      - "8001:8000"
+    secrets:
+       - relay_hub_device_id
+       - lego_house_device_id
+       - particle_access_token
+  tv-backlight-api:
+    image: dakl/tv-backlight-api:latest
+    ports:
+      - "8002:8000"
     secrets:
        - tv_backlight_device_id
-       - relay_hub_device_id
        - particle_access_token
   homebridge:
-    image: oznu/homebridge:raspberry-pi
-    volumes:
-      - ./homebridge/config.json:/homebridge/config.json:ro
-      - ./homebridge/package.json:/homebridge/package.json:ro
+    image: dakl/homebridge:raspberry-pi
     depends_on: 
-      - particle-homebridge-translation-api
+      - particle-relay-hub-api
+      - tv-backlight-api
 secrets:
   tv_backlight_device_id:
     external: true
