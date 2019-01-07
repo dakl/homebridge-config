@@ -3,6 +3,7 @@ build:
 
 push:
 	docker push dakl/homebridge
+
 deploy:
 	docker stack deploy --compose-file=docker-compose.yaml klevanstack
 
