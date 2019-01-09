@@ -5,7 +5,10 @@ push:
 	docker push dakl/homebridge
 
 deploy:
-	docker stack deploy --compose-file=docker-compose.yaml klevanstack
+	docker stack deploy --resolve-image=never --compose-file=docker-compose.yaml klevanstack
+
+start-homebridge:
+	docker-compose up -f docker-compose-homebridge.yaml -d
 
 remove:
 	docker stack rm klevanstack
@@ -14,4 +17,4 @@ particle-logs:
 	docker logs (docker ps -q --filter name=particle-relay-hub-api)
 
 homebridge-logs:
-	docker logs (docker ps -q --filter name=homebridge)
+	docker-compose logs -f homebridge
