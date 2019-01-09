@@ -8,7 +8,7 @@ deploy:
 	docker stack deploy --resolve-image=never --compose-file=docker-compose.yaml klevanstack
 
 start-homebridge:
-	docker-compose up -f docker-compose-homebridge.yaml -d
+	docker-compose -f docker-compose-homebridge.yaml up -d
 
 remove:
 	docker stack rm klevanstack
