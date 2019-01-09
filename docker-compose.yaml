@@ -16,11 +16,7 @@ services:
     secrets:
        - tv_backlight_device_id
        - particle_access_token
-  homebridge:
-    image: dakl/homebridge:raspberry-pi
-    depends_on: 
-      - particle-relay-hub-api
-      - tv-backlight-api
+
 secrets:
   tv_backlight_device_id:
     external: true

@@ -1,0 +1,6 @@
+version: '3.1'
+
+services:
+  homebridge:
+    network_mode: host
+    image: dakl/homebridge:latest
