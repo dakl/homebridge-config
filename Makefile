@@ -10,8 +10,11 @@ deploy-apis:
 remove-apis:
 	docker stack rm apistack
 
-start:
-	docker pull dakl/homebridge:latest && docker-compose up -d
+pull:
+	docker pull dakl/homebridge
+
+start: pull
+	docker run --net=host --name=homebridge --restart=always -d dakl/homebridge:latest
 
 particle-logs:
 	docker logs $(docker ps -q --filter name=particle-relay-hub-api)
