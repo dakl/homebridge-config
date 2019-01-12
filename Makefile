@@ -17,4 +17,4 @@ particle-logs:
 	docker logs (docker ps -q --filter name=particle-relay-hub-api)
 
 homebridge-logs:
-	docker-compose logs -f homebridge
+	docker-compose -f docker-compose-homebridge.yaml logs -f homebridge
