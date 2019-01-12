@@ -1,6 +1,7 @@
-version: '3.1'
+version: '3.2'
 
 services:
+
   particle-relay-hub-api:
     image: dakl/particle-relay-hub-api:latest
     ports:
@@ -9,6 +10,7 @@ services:
        - relay_hub_device_id
        - lego_house_device_id
        - particle_access_token
+
   tv-backlight-api:
     image: dakl/tv-backlight-api:latest
     ports:
@@ -16,6 +18,25 @@ services:
     secrets:
        - tv_backlight_device_id
        - particle_access_token
+
+  agent:
+    image: portainer/agent
+    environment:
+      AGENT_CLUSTER_ADDR: tasks.agent
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/lib/docker/volumes:/var/lib/docker/volumes
+    ports:
+      - target: 9001
+        published: 9001
+        protocol: tcp
+        mode: host
+    networks:
+      - portainer_agent
+    deploy:
+      mode: global
+      placement:
+        constraints: [node.platform.os == linux]
 
 secrets:
   tv_backlight_device_id:
@@ -26,3 +47,9 @@ secrets:
     external: true
   particle_access_token:
     external: true
+
+
+networks:
+  portainer_agent:
+    driver: overlay
+    attachable: true
