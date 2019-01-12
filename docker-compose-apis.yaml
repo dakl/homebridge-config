@@ -1,0 +1,28 @@
+version: '3.1'
+
+services:
+  particle-relay-hub-api:
+    image: dakl/particle-relay-hub-api:latest
+    ports:
+      - "8001:8001"
+    secrets:
+       - relay_hub_device_id
+       - lego_house_device_id
+       - particle_access_token
+  tv-backlight-api:
+    image: dakl/tv-backlight-api:latest
+    ports:
+      - "8002:8001"
+    secrets:
+       - tv_backlight_device_id
+       - particle_access_token
+
+secrets:
+  tv_backlight_device_id:
+    external: true
+  lego_house_device_id:
+    external: true
+  relay_hub_device_id:
+    external: true
+  particle_access_token:
+    external: true

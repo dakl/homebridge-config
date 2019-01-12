@@ -1,7 +1,0 @@
-version: '2.0'
-
-services:
-  homebridge:
-    restart: always
-    network_mode: host
-    image: dakl/homebridge:latest

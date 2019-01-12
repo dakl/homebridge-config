@@ -4,17 +4,17 @@ build:
 push:
 	docker push dakl/homebridge
 
-deploy:
-	docker stack deploy --resolve-image=never --compose-file=docker-compose.yaml klevanstack
+deploy-apis:
+	docker stack deploy --resolve-image=never --compose-file=docker-compose-apis.yaml apistack
 
-start-homebridge:
-	docker-compose -f docker-compose-homebridge.yaml up -d
+remove-apis:
+	docker stack rm apistack
 
-remove:
-	docker stack rm klevanstack
+start:
+	docker pull dakl/homebridge:latest && docker-compose up -d
 
 particle-logs:
-	docker logs (docker ps -q --filter name=particle-relay-hub-api)
+	docker logs $(docker ps -q --filter name=particle-relay-hub-api)
 
-homebridge-logs:
-	docker-compose -f docker-compose-homebridge.yaml logs -f homebridge
+tv-logs:
+	docker logs $(docker ps -q --filter name=tv-backlight-api)
