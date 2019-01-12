@@ -11,56 +11,56 @@
             "accessory": "HTTP-RGB",
             "name": "Switch 1",
             "switch": {
-                "url": "http://localhost:8001/api/v1/accessories/1/status"
+                "url": "http://worker0:8001/api/v1/accessories/1/status"
             }
         },
         {
             "accessory": "HTTP-RGB",
             "name": "Switch 2",
             "switch": {
-                "url": "http://localhost:8001/api/v1/accessories/2/status"
+                "url": "http://worker0:8001/api/v1/accessories/2/status"
             }
         },
         {
             "accessory": "HTTP-RGB",
             "name": "Switch 3",
             "switch": {
-                "url": "http://localhost:8001/api/v1/accessories/3/status"
+                "url": "http://worker0:8001/api/v1/accessories/3/status"
             }
         },
         {
             "accessory": "HTTP-RGB",
             "name": "Switch 4",
             "switch": {
-                "url": "http://localhost:8001/api/v1/accessories/4/status"
+                "url": "http://worker0:8001/api/v1/accessories/4/status"
             }
         },
         {
             "accessory": "HTTP-RGB",
             "name": "Switch 5",
             "switch": {
-                "url": "http://localhost:8001/api/v1/accessories/5/status"
+                "url": "http://worker0:8001/api/v1/accessories/5/status"
             }
         },
         {
             "accessory": "HTTP-RGB",
             "name": "Switch 6",
             "switch": {
-                "url": "http://localhost:8001/api/v1/accessories/6/status"
+                "url": "http://worker0:8001/api/v1/accessories/6/status"
             }
         },
         {
             "accessory": "HTTP-RGB",
             "name": "Switch 7",
             "switch": {
-                "url": "http://localhost:8001/api/v1/accessories/7/status"
+                "url": "http://worker0:8001/api/v1/accessories/7/status"
             }
         },
         {
             "accessory": "HTTP-RGB",
             "name": "Switch 8",
             "switch": {
-                "url": "http://localhost:8001/api/v1/accessories/8/status"
+                "url": "http://worker0:8001/api/v1/accessories/8/status"
             }
         },
         {
@@ -68,13 +68,13 @@
             "name": "Bakom Teven",
             "duration": 750,
             "switch": {
-                "url": "http://localhost:8002/api/v1/accessories/1/status"
+                "url": "http://worker0:8002/api/v1/accessories/1/status"
             },
             "brightness": {
-                "url": "http://localhost:8002/api/v1/accessories/1/brightness"
+                "url": "http://worker0:8002/api/v1/accessories/1/brightness"
             },
             "color": {
-                "url": "http://localhost:8002/api/v1/accessories/1/color",
+                "url": "http://worker0:8002/api/v1/accessories/1/color",
                 "brightness": true
             }
         }
