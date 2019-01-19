@@ -19,6 +19,11 @@ services:
        - tv_backlight_device_id
        - particle_access_token
 
+  mosquitto:
+    image: dakl/rpi-mosquitto
+    ports:
+      - "1883:1883"
+
   agent:
     image: portainer/agent
     environment:
