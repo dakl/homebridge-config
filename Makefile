@@ -1,6 +1,6 @@
 HASS_VERSION=0.85.1
-# HASS_IMAGE=homeassistant/raspberrypi3-homeassistant
-HASS_IMAGE=homeassistant/home-assistant
+HASS_IMAGE=homeassistant/raspberrypi3-homeassistant
+# HASS_IMAGE=homeassistant/home-assistant
 HASS_IMAGE_TAGNAME=$(HASS_IMAGE):$(HASS_VERSION)
 
 
