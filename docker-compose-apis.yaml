@@ -11,6 +11,13 @@ services:
        - lego_house_device_id
        - particle_access_token
 
+  particle-relay-hub-handler:
+    image: dakl/particle-relay-hub-handler:latest
+    secrets:
+       - relay_hub_device_id
+       - lego_house_device_id
+       - particle_access_token
+
   tv-backlight-api:
     image: dakl/tv-backlight-api:latest
     ports:
