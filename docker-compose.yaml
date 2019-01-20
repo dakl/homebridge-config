@@ -2,6 +2,14 @@ version: '2.0'
 
 services:
   homebridge:
-    restart: always
-    network_mode: host
     image: dakl/homebridge:latest
+    network_mode: host
+    restart: always
+  homeassistant:
+    image: homeassistant/raspberrypi3-homeassistant:0.85.1
+    volumes:
+      - ./homeassistant-config/config:/config
+    environment:
+      - TZ=Europe/Stockholm
+    network_mode: host
+    restart: always

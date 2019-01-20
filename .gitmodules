@@ -1,0 +1,3 @@
+[submodule "homeassistant-config"]
+	path = homeassistant-config
+	url = git@github.com:dakl/homeassistant-config.git
