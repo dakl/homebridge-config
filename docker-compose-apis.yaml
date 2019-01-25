@@ -26,6 +26,12 @@ services:
        - tv_backlight_device_id
        - particle_access_token
 
+  tv-backlight-handler:
+    image: dakl/tv-backlight-handler:latest
+    secrets:
+       - tv_backlight_device_id
+       - particle_access_token
+
   mosquitto:
     image: dakl/rpi-mosquitto
     ports:
